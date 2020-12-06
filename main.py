@@ -1,8 +1,8 @@
-from dep.deoldify import device
-from dep.deoldify.device_id import DeviceId
-from os import path
+from deoldify import device
+from deoldify.device_id import DeviceId
+from deoldify.visualize import *
+
 import fastai
-from dep.deoldify.visualize import *
 from pathlib import Path
 import torch
 
@@ -22,8 +22,8 @@ def main():
     source_url = 'https://www.reddit.com/r/nextfuckinglevel/comments/jyq24w/this_shot_from_the_movie_wings_1927_is_too_good/' #@param {type:"string"}
     render_factor = 21  #@param {type: "slider", min: 5, max: 40}
     watermarked = False #@param {type:"boolean"}
-
     if source_url is not None and source_url !='':
         video_path = colorizer.colorize_from_url(source_url, 'video.mp4', render_factor, watermarked=watermarked)
     else:
         print('Provide a video url and try again.')
+
